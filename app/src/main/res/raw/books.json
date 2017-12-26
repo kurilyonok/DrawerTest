@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Crime and Punishment",
+    "author_id": 1,
+    "year": "2017"
+  },
+  {
+    "title": "Anna Karenina",
+    "author_id": 2,
+    "year": "2012"
+  },
+  {
+    "title": "Eugene Onegin",
+    "author_id": 3,
+    "year": "2017"
+  },
+  {
+    "title": "Farewell, Unwashed Russia",
+    "author_id": 4,
+    "year": "2009"
+  },
+  {
+    "title": "The Idiot",
+    "author_id": 1,
+    "year": "2015"
+  },
+  {
+    "title": "The Bronze Horseman",
+    "author_id": 3,
+    "year": "2016"
+  },
+  {
+    "title": "Borodino",
+    "author_id": 4,
+    "year": "2017"
+  },
+  {
+    "title": "Anna Karenina",
+    "author_id": 2,
+    "year": "2014"
+  },
+  {
+    "title": "A Hero of Our Time",
+    "author_id": 4,
+    "year": "2014"
+  },
+  {
+    "title": "Tale of Tsar Saltan",
+    "author_id": 3,
+    "year": "2016"
+  },
+  {
+    "title": "A Hero of Our Time",
+    "author_id": 4,
+    "year": "2013"
+  },
+  {
+    "title": "Tale of Tsar Saltan",
+    "author_id": 3,
+    "year": "2011"
+  },
+  {
+    "title": "Crime and Punishment",
+    "author_id": 1,
+    "year": "2007"
+  },
+  {
+    "title": "Anna Karenina",
+    "author_id": 2,
+    "year": "2007"
+  },
+  {
+    "title": "Eugene Onegin",
+    "author_id": 3,
+    "year": "2014"
+  }
+]

@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="alertDialogTheme">@style/AppAlertDialog</item>
+    </style>
+
+    <style name="AppAlertDialog"
+        parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <declare-styleable name="RoundedTextLayout">
+        <attr name="color" format="color" />
+    </declare-styleable>
+
+    <!--<style name="Popup" parent="Base.Widget.AppCompat.PopupMenu">-->
+        <!--<item name="android:windowEnterAnimation"></item>-->
+        <!--<item name="android:windowExitAnimation"></item>-->
+    <!--</style>-->
+
+</resources>

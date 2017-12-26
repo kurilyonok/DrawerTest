@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/year_double_container"
+    android:layout_height="80dp"
+    android:columnCount="3"
+    android:rowCount="3">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_columnSpan="3"
+        android:background="@android:color/white" />
+
+    <FrameLayout
+        android:layout_width="8dp"
+        android:layout_height="64dp"
+        android:background="@android:color/white" />
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/year_double_item"
+        android:layout_height="64dp"
+        tools:background="@drawable/gradient">
+
+        <Button
+            android:id="@+id/button_year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:textColor="@android:color/white"
+            tools:text="2017" />
+
+        <org.numisoft.drawertest.RoundedTextLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="6dp"
+            app:color="@android:color/white">
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TEST"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="10sp" />
+
+        </org.numisoft.drawertest.RoundedTextLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="8dp"
+        android:layout_height="64dp"
+        android:background="@android:color/white" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_columnSpan="3"
+        android:background="@android:color/white" />
+
+</GridLayout>

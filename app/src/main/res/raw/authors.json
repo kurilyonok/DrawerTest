@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "first_name": "Fyodor",
+    "last_name": "Dostoyevsky"
+  },
+  {
+    "id": 2,
+    "first_name": "Leo",
+    "last_name": "Tolstoi"
+  },
+  {
+    "id": 3,
+    "first_name": "Alex",
+    "last_name": "Pushkin"
+  },
+  {
+    "id": 4,
+    "first_name": "Mike",
+    "last_name": "Lermontov"
+  }
+]

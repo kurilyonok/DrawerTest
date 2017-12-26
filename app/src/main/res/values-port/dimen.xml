@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pop_width">256dp</dimen>
+    <dimen name="pop_height">336dp</dimen>
+    <integer name="year_column_count">3</integer>
+
+    <dimen name="year_double_container">160dp</dimen>
+    <dimen name="year_double_item">144dp</dimen>
+    <integer name="double_span">2</integer>
+</resources>

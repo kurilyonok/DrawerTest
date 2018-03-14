@@ -1,5 +1,6 @@
 package org.numisoft.drawertest.booksrecycler;
 
+import android.support.text.emoji.EmojiCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -51,7 +52,8 @@ public class BookViewHolder extends RecyclerView.ViewHolder {
                 .concat(", ")
                 .concat(book.getBook().getYear()));
 
-        tvBookTitle.setText(book.getBook().getTitle());
+        CharSequence processed = EmojiCompat.get().process("\ud83c\udff0");
+        tvBookTitle.setText(book.getBook().getTitle() + " " + processed);
         ivFavorite.setImageResource(
                 book.getBook().isFavorite() ?
                         R.drawable.ic_star_black_24dp :

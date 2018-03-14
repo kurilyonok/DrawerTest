@@ -6,6 +6,8 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.migration.Migration;
 import android.support.annotation.NonNull;
+import android.support.text.emoji.EmojiCompat;
+import android.support.text.emoji.bundled.BundledEmojiCompatConfig;
 import android.util.Log;
 
 import org.numisoft.drawertest.room.AppDatabase;
@@ -37,6 +39,9 @@ public class DrawerTestApp extends Application {
                     }
                 })
                 .build();
+
+        EmojiCompat.Config config = new BundledEmojiCompatConfig(this);
+        EmojiCompat.init(config);
     }
 
     @Deprecated

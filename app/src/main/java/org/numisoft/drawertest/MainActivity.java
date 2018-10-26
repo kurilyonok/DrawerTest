@@ -276,19 +276,6 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
-//        for (NavMenuItem navItem : navMenuItems) {
-//
-//            if (navItem instanceof AuthorItem) {
-//                String lastName = ((AuthorItem) navItem).getLastName();
-//                ((AuthorItem) navItem).setBooksCount(authorsMap.get(lastName).first);
-//                ((AuthorItem) navItem).setFavoriteCount(authorsMap.get(lastName).second);
-//            }
-//
-//        }
-
-
-
-
     }
 
     private void setupToolbar() {

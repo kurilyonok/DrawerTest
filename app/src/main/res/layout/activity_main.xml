@@ -10,7 +10,8 @@
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        tools:context="org.numisoft.drawertest.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
@@ -29,7 +30,7 @@
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
+                    android:layout_height="?android:attr/actionBarSize"
                     app:layout_collapseMode="pin"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -79,7 +80,7 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="match_parent"
         android:layout_gravity="start">
 
@@ -87,7 +88,23 @@
             android:id="@+id/recycler_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient" />
+            android:background="@drawable/gradient"
+            android:overScrollMode="never"/>
+
+    </android.support.design.widget.NavigationView>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation2"
+        android:layout_width="180dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_menu2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient"
+            android:overScrollMode="never"/>
 
     </android.support.design.widget.NavigationView>
 

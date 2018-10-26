@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -26,6 +27,7 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.PopupWindow;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -92,6 +94,9 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.recycler_menu)
     RecyclerView rvMenu;
 
+    @BindView(R.id.recycler_menu2)
+    RecyclerView rvMenu2;
+
     @BindView(R.id.appbar)
     AppBarLayout appbar;
 
@@ -123,6 +128,7 @@ public class MainActivity extends AppCompatActivity
         setupDrawer();
         setupNavigationRecycler();
         setupBookRecycler();
+        setupBottomSheet();
 
         database = AppDatabase.getInstance(getApplicationContext());
         addItems();
@@ -143,15 +149,25 @@ public class MainActivity extends AppCompatActivity
                         ContextCompat.getColor(this, R.color.color2)});
 
         appbar.setBackground(gradientDrawable);
-//        appbar.setBackground(getDrawable(R.drawable.gradient));
 
 
 //        GOOGLE DRIVE STUFF
-//        googleSignInClient = buildGoogleSignInClient();
-//        startActivityForResult(googleSignInClient.getSignInIntent(), REQUEST_CODE_SIGN_IN);
+        googleSignInClient = buildGoogleSignInClient();
+        startActivityForResult(googleSignInClient.getSignInIntent(), REQUEST_CODE_SIGN_IN);
 
     }
 
+    private void setupBottomSheet() {
+        View bottomSheet = findViewById(R.id.bottom_sheet);
+        BottomSheetBehavior bsb = BottomSheetBehavior.from(bottomSheet);
+        bottomSheet.setOnClickListener(v -> {
+            if (bsb.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+                bsb.setState(BottomSheetBehavior.STATE_EXPANDED);
+            } else  {
+                bsb.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            }
+        });
+    }
 
     private void addItems() {
         AsyncTask.execute(() -> {
@@ -248,6 +264,9 @@ public class MainActivity extends AppCompatActivity
         navMenuAdapter = new NavMenuAdapter(navMenuItems, this);
         rvMenu.setLayoutManager(new LinearLayoutManager(this));
         rvMenu.setAdapter(navMenuAdapter);
+
+        rvMenu2.setLayoutManager(new LinearLayoutManager(this));
+        rvMenu2.setAdapter(navMenuAdapter);
     }
 
     private void updateNavMenu() {
@@ -391,7 +410,7 @@ public class MainActivity extends AppCompatActivity
     private GoogleSignInClient buildGoogleSignInClient() {
         GoogleSignInOptions signInOptions =
                 new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                        .requestScopes(Drive.SCOPE_APPFOLDER)
+                        .requestScopes(Drive.SCOPE_FILE)
                         .build();
 
         GoogleSignInClient client = GoogleSignIn.getClient(this, signInOptions);
@@ -410,7 +429,7 @@ public class MainActivity extends AppCompatActivity
                     driveResourceClient = Drive.getDriveResourceClient(this, GoogleSignIn.getLastSignedInAccount(this));
                     createFileInAppFolder();
 
-                    driveResourceClient.getAppFolder()
+                    driveResourceClient.getRootFolder()
                             .continueWithTask(folderTask -> driveResourceClient.listChildren(folderTask.getResult()))
                             .addOnSuccessListener(this,
                                     metadataBuffer -> {
@@ -425,7 +444,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void createFileInAppFolder() {
-        Task<DriveFolder> appFolderTask = driveResourceClient.getAppFolder();
+        Task<DriveFolder> appFolderTask = driveResourceClient.getRootFolder();
         Task<DriveContents> createContentsTask = driveResourceClient.createContents();
         Tasks.whenAll(appFolderTask, createContentsTask)
                 .continueWithTask(task -> {
@@ -437,7 +456,7 @@ public class MainActivity extends AppCompatActivity
                     }
 
                     MetadataChangeSet changeSet = new MetadataChangeSet.Builder()
-                            .setTitle("New file 3")
+                            .setTitle("New file 8")
                             .setMimeType("text/plain")
                             .setStarred(true)
                             .build();
